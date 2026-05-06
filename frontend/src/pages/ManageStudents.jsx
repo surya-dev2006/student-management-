@@ -13,12 +13,12 @@ export default function ManageStudents() {
   useEffect(() => { load(); }, []);
 
   const save = async () => {
-    if (editId) await axios.put(`/students/${editId}`, form);
-    else        await axios.post('/students', form);
+    if (editId) await axios.put(`/api/students/${editId}`, form);
+    else        await axios.post('/api/students', form);
     setForm(empty); setEditId(null); load();
   };
 
-  const remove = async (id) => { await axios.delete(`/students/${id}`); load(); };
+  const remove = async (id) => { await axios.delete(`/api/students/${id}`); load(); };
   const edit = (s) => { setForm(s); setEditId(s._id); };
 
   const fields = ['name', 'rollNumber', 'department', 'year', 'email', 'phone'];

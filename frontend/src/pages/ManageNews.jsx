@@ -12,12 +12,12 @@ export default function ManageNews() {
   useEffect(() => { load(); }, []);
 
   const save = async () => {
-    if (editId) await axios.put(`/news/${editId}`, form);
-    else        await axios.post('/news', form);
+    if (editId) await axios.put(`/api/news/${editId}`, form);
+    else        await axios.post('/api/news', form);
     setForm(empty); setEditId(null); load();
   };
 
-  const remove = async (id) => { await axios.delete(`/news/${id}`); load(); };
+  const remove = async (id) => { await axios.delete(`/api/news/${id}`); load(); };
   const edit = (n) => { setForm(n); setEditId(n._id); };
 
   return (
