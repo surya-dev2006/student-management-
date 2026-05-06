@@ -9,7 +9,7 @@ export default function AdminDashboard() {
 
   const login = async () => {
     try {
-      const res = await axios.post('/login', creds);
+      const res = await axios.post('/api/login', creds);
       localStorage.setItem('token', res.data.token);
       nav('/admin/students');
     } catch {

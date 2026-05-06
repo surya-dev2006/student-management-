@@ -8,7 +8,7 @@ export default function ManageNews() {
   const [form, setForm] = useState(empty);
   const [editId, setEditId] = useState(null);
 
-  const load = () => axios.get('/news').then(r => setNewsList(r.data));
+  const load = () => axios.get('/api/news').then(r => setNewsList(r.data));
   useEffect(() => { load(); }, []);
 
   const save = async () => {

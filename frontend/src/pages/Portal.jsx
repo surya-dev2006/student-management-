@@ -6,7 +6,7 @@ export default function Portal() {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
-    axios.get('/news').then(r => setNews(r.data));
+    axios.get('/api/news').then(r => setNews(r.data));
   }, []);
 
   return (

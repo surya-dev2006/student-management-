@@ -9,7 +9,7 @@ export default function ManageStudents() {
   const [form, setForm] = useState(empty);
   const [editId, setEditId] = useState(null);
 
-  const load = () => axios.get('/students').then(r => setStudents(r.data));
+  const load = () => axios.get('/api/students').then(r => setStudents(r.data));
   useEffect(() => { load(); }, []);
 
   const save = async () => {
